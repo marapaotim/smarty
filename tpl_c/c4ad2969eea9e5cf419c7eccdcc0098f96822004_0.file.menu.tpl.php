@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-07-17 07:01:52
+/* Smarty version 3.1.30, created on 2017-07-17 09:47:37
   from "/var/www/guestbook-tim/tpl/menu.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_596c60e068dde3_01479170',
+  'unifunc' => 'content_596c87b9af92c0_33061551',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c4ad2969eea9e5cf419c7eccdcc0098f96822004' => 
     array (
       0 => '/var/www/guestbook-tim/tpl/menu.tpl',
-      1 => 1500036014,
+      1 => 1500283778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_596c60e068dde3_01479170 (Smarty_Internal_Template $_smarty_tpl) {
+function content_596c87b9af92c0_33061551 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
 <head>
@@ -29,13 +29,13 @@ function content_596c60e068dde3_01479170 (Smarty_Internal_Template $_smarty_tpl)
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>
+ src="js/jquery.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="js/bootstrap.min.js" crossorigin="anonymous"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="ajax/insert.js"><?php echo '</script'; ?>
+ src="ajax/message.js"><?php echo '</script'; ?>
 >
 
 <style type="text/css"> 
@@ -62,6 +62,7 @@ body {
   margin: 20px 0;
 }
 </style>
+ 
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -71,7 +72,9 @@ body {
     </div>
     <center>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=main">Home</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=about-us">About Us</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=blog">BLOG</a></li> 
     </ul>
     </center>
   </div>

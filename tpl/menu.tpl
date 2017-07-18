@@ -4,9 +4,9 @@
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script src="ajax/insert.js"></script>
+<script src="ajax/message.js"></script>
 
 <style type="text/css"> 
 html {
@@ -32,6 +32,7 @@ body {
   margin: 20px 0;
 }
 </style>
+ 
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -41,7 +42,9 @@ body {
     </div>
     <center>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=main">Home</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=about-us">About Us</a></li> 
+      <li><a href="http://guestbook-tim.linuxserv.space/?action=blog">BLOG</a></li> 
     </ul>
     </center>
   </div>
