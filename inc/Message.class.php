@@ -3,19 +3,28 @@ require_once('config.php');
 if(isset($_REQUEST['type']) && !empty($_REQUEST['type'])){
 	$type = $_REQUEST['type'];
 	switch ($type) {
-		case "insert": 
+		case "insert_update": 
+		if(!isset($_REQUEST["id"])){$_REQUEST["id"] = 0;}
 			$arrayUser = array(
+					"add"	=> $_REQUEST["add"],
+					"id"	=> $_REQUEST["id"],
 					"name" => $_REQUEST["fname"],
 					"email" => $_REQUEST["email"],
 					"message" => $_REQUEST["message"]
 			);
+			//print_r("<pre>");print_r($arrayUser);print_r("</pre>");
+			//exit(0);
 			$insertUser = new Messages(); 
-			$insertUser->insertMessage($arrayUser); 
+			$insertUser->insert_updateMessage($arrayUser); 
+		break;
+		case "delete":
+			$deleteUser = new Messages(); 
+			$deleteUser->deleteMessage($_REQUEST["id"]); 
 		break;
 		case "viewMessages":
 			$pages = 0;
 			$viewMessage = new Messages(); 
-			$viewMessage->Messages_list($pages); 
+			$viewMessage->Messages_list(); 
 		break;
 		case "paginate":
 			$pages = ($_REQUEST['pages']*10) - 10;
@@ -36,11 +45,12 @@ class Messages{
 		$this->conn = '';  
 		$this->arrayMessage = array(); 
 		$this->smartyConfig = new Config(); 
-		$this->tpl_folder = "/var/www/guestbook-tim/tpl/";
+		//$this->tpl_folder = "/var/www/guestbook-tim/tpl/";
  	} 
-	public function viewMessages($pages){     
+	public function viewMessages(){     
 		$this->conn = $this->smartyConfig->dBase();	
-		$sql = "SELECT `id`, `name`, `email`, `message` FROM `guestbook`.`tblguest` order by id desc limit $pages,10"; 
+		//$sql = "SELECT `id`, `name`, `email`, `message` FROM `guestbook`.`tblguest` order by id desc limit $pages,10"; 
+		$sql = "SELECT `id`, `name`, `email`, `message` FROM `guestbook`.`tblguest` order by id desc";
 		$query = $this->conn->prepare($sql);    
 		$query->execute(); 
 		$arrayMessage = $query->fetchAll();  
@@ -55,20 +65,17 @@ class Messages{
 		return ceil($query->rowCount()/10);    
 	}
 
-	public function insertMessage($dataUser){  
-		$this->conn = $this->smartyConfig->dBase(); 
-		$sql = "INSERT INTO `guestbook`.`tblguest`
-(
-	`name`,
-	`email`,
-	`message`
-)
-VALUES
-(
-	:name,
-	:email,
-	:message
-);";
+	public function insert_updateMessage($dataUser){  
+		$this->conn = $this->smartyConfig->dBase();  
+		$sql = ""; 
+		if($dataUser["add"] == "true") 
+			$sql = "INSERT INTO `guestbook`.`tblguest`(`name`,`email`,`message`) VALUES (:name,:email,:message);";
+		  
+		else 
+			$sql = "UPDATE `guestbook`.`tblguest` SET `name` = :name, `email` = :email, `message` = :message WHERE `id` = '".$dataUser["id"]."';"; 
+
+		//echo $sql;
+		//exit(0);
        $query = $this->conn->prepare($sql); 
        $query->bindParam(':name', $dataUser["name"]);
        $query->bindParam(':email', $dataUser["email"]);
@@ -82,15 +89,23 @@ VALUES
        //$this->sendEmail($arrayGuest);
 	}
 
-	public function Messages_list($pages){
-	try {
-	   $smarty = $this->smartyConfig->dataConfig();
-       $smarty->assign('people', $this->viewMessages($pages)); 
-       $smarty->assign('to', $this->viewMessagePagination());
-       $smarty->display('message_list.tpl');
-    } catch (Exception $e) {
-    	echo 'Caught exception: ',  $e->getMessage(), "\n"; 
-	} 
+	public function deleteMessage($id){  
+		$this->conn = $this->smartyConfig->dBase();  
+		$sql = "DELETE FROM `guestbook`.`tblguest` WHERE id='".$id."';";  
+       $query = $this->conn->prepare($sql);  
+       $query->execute();  
+	}
+
+	public function Messages_list(){
+		try{
+		   $smarty = $this->smartyConfig->dataConfig();
+	       $smarty->assign('people', $this->viewMessages()); 
+	       $smarty->assign('to', $this->viewMessagePagination());
+	       $smarty->display('../tpl/message_list.tpl');
+	    }catch (Exception $e)
+	    {
+	    	echo 'Caught exception: ',  $e->getMessage(), "\n"; 
+		} 
 	}
 
 	public function sendEmail($dataGuest)
@@ -103,4 +118,3 @@ VALUES
 	   mail("marapaotim@gmail.com,tim.marapao@oxi.ro,razvan@oxi.ro,gabriela.dan@bioelite.ro","Guestbook App",$msg, $headers); 
 	}
 }
-?>

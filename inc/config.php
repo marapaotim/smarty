@@ -1,5 +1,5 @@
 <?php
-require_once('/var/www/libs/smarty/Smarty.class.php');
+require_once('../smarty_template/libs/Smarty.class.php');
 class Config{
 	private $config;  
 	private $smartyTemp;
@@ -16,18 +16,18 @@ class Config{
 
 		$this->dbHost = 'localhost';
 		$this->dbUsername = 'root';
-		$this->dbPassword = 'GHoA1mhxX6ql';
+		$this->dbPassword = '';
 		$this->dbName = 'guestbook';
  	}
 
- 	public function dataConfig(){
-		$this->config['BASE_DIR'] = '/var/www/guestbook-tim/';  
-		$this->config['BASE_URL'] = 'http://guestbook-tim.linuxserv.space'; 
-		$this->smartyTemp->template_dir = $this->config['BASE_DIR'] . '/tpl';
-		$this->smartyTemp->compile_dir  = $this->config['BASE_DIR'] . '/tpl_c';
-		$this->smartyTemp->setCacheDir($this->config['BASE_DIR'].'/cache');
+ 	public function dataConfig(){ 
 		$this->smartyTemp->caching = 0;
-		$this->smartyTemp->force_compile = true;   
+		$this->smartyTemp->force_compile = true; 
+		$this->config['BASE_DIR'] = 'tpl';  
+		$this->config['BASE_URL'] = 'tpl_c'; 
+		$this->smartyTemp->template_dir = $this->config['BASE_DIR'];
+		$this->smartyTemp->compile_dir  = $this->config['BASE_URL'];
+		//$this->smartyTemp->setCacheDir("../".$this->config['BASE_URL']);  
 		return $this->smartyTemp;
  	}
 
@@ -37,6 +37,3 @@ class Config{
         return $conn;
  	}
 }
-
-
-?>
