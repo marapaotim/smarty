@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32-dev-38, created on 2018-01-10 10:49:12
+/* Smarty version 3.1.32-dev-38, created on 2018-01-11 16:29:54
   from 'C:\xampp\htdocs\smarty\tpl\message_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-38',
-  'unifunc' => 'content_5a55e1983f9c14_05802115',
+  'unifunc' => 'content_5a5782f2b37ea0_49616388',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a55e1983f9c14_05802115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5782f2b37ea0_49616388 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table  id="tblMessage" class="table table-striped table-bordered">
   <thead>
     <tr> 

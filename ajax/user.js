@@ -19,6 +19,7 @@
 					data:  {type:type,username:username, password:password},
 					url: "inc/User.class.php",
 					success: function(result){  
+						//alert(result);
 						if(result == 'false'){ alert('Invalid Username or Password'); } else { window.location="?action=main"; }  
 					}
 				})

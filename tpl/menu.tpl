@@ -20,6 +20,9 @@
 <link rel="stylesheet" type="text/css" href="css/global.css">  
 <link rel="stylesheet" type="text/css" href="css/login.css"> 
 <link rel="stylesheet" type="text/css" href="css/profile.css">
+
+<script type="text/javascript" src="fancybox-2.1.7/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="fancybox-2.1.7/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 <style type="text/css"> 
 html {
   position: relative;
@@ -48,8 +51,12 @@ body {
 
   <script>
     $(document).ready(function(){
+      
+
+      $('.fancybox').fancybox();
       $('.slider').bxSlider({  
         slideWidth: 300,
+        pause: 3000,
         minSlides: 4,
         maxSlides: 5,
         moveSlides: 1,
@@ -69,7 +76,22 @@ body {
   </script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top"> 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid bottom-border">
+      <div class="col-md-9"></div>
+      <div class="col-md-3 sub-container">
+        <div class="row">
+          <div class="input-group stylish-input-group">
+              <input type="text" class="form-control"  placeholder="Search" >
+              <span class="input-group-addon">
+                  <button type="submit">
+                      <span class="glyphicon glyphicon-search"></span>
+                  </button>  
+              </span>
+          </div>
+        </div>
+      </div>
+  </div> 
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

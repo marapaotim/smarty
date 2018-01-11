@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32-dev-38, created on 2018-01-10 08:43:03
+/* Smarty version 3.1.32-dev-38, created on 2018-01-11 12:55:37
   from 'C:\xampp\htdocs\smarty\tpl\profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-38',
-  'unifunc' => 'content_5a55c407b04769_70240019',
+  'unifunc' => 'content_5a5750b9e51646_12229174',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60feeca49bf29db3073c9563132b4368de443668' => 
     array (
       0 => 'C:\\xampp\\htdocs\\smarty\\tpl\\profile.tpl',
-      1 => 1515565188,
+      1 => 1515661081,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a55c407b04769_70240019 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5750b9e51646_12229174 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -34,7 +34,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="http://placehold.it/300x150">
+                   <a class="fancybox" href="img/rabbit.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"> <img alt="" src="img/rabbit.jpg"></a>
                 </div>
                 <div class="info">
                     <div class="title">

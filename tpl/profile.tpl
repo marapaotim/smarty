@@ -8,7 +8,7 @@
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="http://placehold.it/300x150">
+                   <a class="fancybox" href="img/rabbit.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"> <img alt="" src="img/rabbit.jpg"></a>
                 </div>
                 <div class="info">
                     <div class="title">

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32-dev-38, created on 2018-01-10 08:48:35
+/* Smarty version 3.1.32-dev-38, created on 2018-01-11 11:47:01
   from 'C:\xampp\htdocs\smarty\tpl\about_us.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-38',
-  'unifunc' => 'content_5a55c553d71339_35681400',
+  'unifunc' => 'content_5a5740a5e215e9_37115829',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a55c553d71339_35681400 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5740a5e215e9_37115829 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>  
 <div class="container-fluid">

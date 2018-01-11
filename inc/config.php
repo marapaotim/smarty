@@ -22,7 +22,7 @@ class Config{
 
  	public function dataConfig(){ 
 		$this->smartyTemp->caching = 0;
-		$this->smartyTemp->force_compile = true; 
+		//$this->smartyTemp->force_compile = true; 
 		$this->config['BASE_DIR'] = 'tpl';  
 		$this->config['BASE_URL'] = 'tpl_c'; 
 		$this->smartyTemp->template_dir = $this->config['BASE_DIR'];
